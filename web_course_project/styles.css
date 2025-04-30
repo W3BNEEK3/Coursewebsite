@@ -1,0 +1,539 @@
+/* styles.css */
+
+/* Variables */
+:root {
+    --primary-pink: #a72872;
+    --light-pink: #57294d;
+    --hover-color: pink;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray-medium: #dee2e6;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Global Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: var(--font-family);
+    background: var(--gray-light);
+    color: #333;
+    line-height: 1.6;
+    background: rgb(226, 225, 225);
+    
+    background-size: cover;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+
+  /* Hero Section */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    
+    background: rgba(10,10,10,0.5);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 80px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .hero-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  /* Subtitle */
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  /* Buttons */
+  .hero-buttons .btn {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  .btn {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+  /* Button Hover Override for Index Hero */
+.hero-buttons .btn:hover {
+  background: var(--primary-pink); /* BlueViolet, adjust as you like */
+  color: var(--white);
+}
+
+  
+  /* Fade‑In‑Down Animation */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in-down {
+    animation: fadeInDown 1.8s ease-out forwards;
+    color:rgb(226, 225, 225);
+  }
+  
+  
+  /* Header/Nav */
+  header {
+    background: var(--white);
+    
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px  rgba(0,0,0,0.05);
+  }
+  header .container {
+    background: transparent;
+  }
+  header {
+    padding-left: 20px;
+    background-color: rgba(10,10,10,0.5);
+    border-style: solid ;
+    border-width: 0.5px 0.5px 0.5px 0.5px;
+    border-color: rgb(255, 255, 255);
+  }
+  header .logo {
+    font-size: 2.5rem;
+    color: rgb(243, 146, 199);
+    font-weight: bold;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  nav a {
+    margin-right: 1rem;
+    color: #fbdffc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+  }
+  nav a:hover {
+    color: var(--primary-pink);
+  }
+
+.dashboard-body{
+  background: scroll rgb(226, 225, 225);
+}
+h1{
+  color: #f846ae;
+}
+.index_h1{
+  color: white;
+}
+  
+  /* Course Grid */
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Course Card */
+  .course-card {
+    background: rgba(10,10,10,0.5);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp var(--transition-speed) ease-out forwards;
+  }
+  .course-card:nth-child(1) { animation-delay: 0.1s; }
+  .course-card:nth-child(2) { animation-delay: 0.2s; }
+  .course-card:nth-child(3) { animation-delay: 0.3s; }
+  .course-card:nth-child(4) { animation-delay: 0.4s; }
+  
+  .course-card img {
+    background: transparent;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  .course-card-content {
+    padding: 1rem;
+  }
+  .course-card h3 {
+    background-color: #bdbdbd;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #df49d2;
+    margin-bottom: 0.5rem;
+    color: var(--primary-pink);
+  }
+  .course-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .course-card .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-pink);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+  .course-card .btn:hover {
+    background: var(--light-green);
+    transform: translateY(-2px);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .fieldset-login {
+    background: rgba(10,10,10,0.5);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-color:#db3496;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: auto;
+    max-width: 400px;
+    color: #e9e6e6;
+  }
+  .leg-login {
+    font-size: 2.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 1rem;
+    color: rgb(102, 1, 68);
+    background-color: rgba(252, 174, 213, 0.6);
+    border-radius: 5px;
+    border-style: hidden;
+    border-width: 1px;
+    padding-right: 5px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  .old-user{
+    margin: auto;
+    font-size: 1.4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(121, 3, 81);
+    text-align: center;
+  }
+  
+  .old-user a{
+    color: rgb(235, 183, 217);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+    background-color:rgb(102, 1, 68);
+    border-color:rgb(102, 1, 68);
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+
+  .old-user a:hover{
+    color: var(--primary-pink);
+    transform: translateY(-2px);
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .old-user {
+    animation: fadeInDown 1.2s ease-out forwards;
+  }
+  input{
+    background: transparent;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: #f7f1f1;
+    transition: border-color var(--transition-speed);
+    
+  }
+  input::placeholder {
+    color: lightgrey; /* Adjust the color as needed */
+    opacity: 1; /* Ensures the placeholder is fully visible */
+}
+
+textarea{
+    background: transparent;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: #f7f1f1;
+    transition: border-color var(--transition-speed);
+    
+  }
+
+  textarea::placeholder {
+    color: lightgrey; /* Adjust the color as needed */
+    opacity: 1; /* Ensures the placeholder is fully visible */
+  }
+  button{
+    background: var(--primary-pink);
+    color: var(--white);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+  button:hover{
+    background: var(--light-pink);
+    transform: translateY(-2px);
+  }
+  .welcome-message {
+    color: #d3d3d3; /* Light grey color */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.logout-btn {
+  background: var(--primary-pink);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.logout-btn:hover {
+  background: var(--light-pink);
+  transform: translateY(-2px);
+}
+  .logout-btn:focus {
+    outline: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 1rem;
+    }
+    .course-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    header {
+      padding: 0.5rem 0;
+    }
+  }
+  .pricing-card1{
+    background: rgba(26, 133, 4, 0.5);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp var(--transition-speed) ease-out forwards;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .pricing-card2{
+    background: rgba(255, 104, 3, 0.5);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp var(--transition-speed) ease-out forwards;
+    padding: 10px;
+    margin-bottom: 20px; 
+  }
+  .pricing-card3{
+    background: rgba(255, 3, 3, 0.5);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp var(--transition-speed) ease-out forwards;
+    padding: 10px;
+  }
+.btnCSS1{
+    background: rgba(10,10,10,0.5);
+    color: var(--white);
+    padding: 2px 6px 2px 6px; 
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+  .btnCSS1:hover{
+    background: rgba(26, 133, 4, 0.5);
+    transform: translateY(-2px);
+  }
+  .btnCSS1:focus {
+    outline: none;
+  }
+  .btnCSS1:active {
+    transform: translateY(2px);
+  }
+  .btnCSS2{
+    background: rgba(10,10,10,0.5);
+    color: var(--white);
+    padding: 2px 6px 2px 6px; 
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+  .btnCSS2:hover{
+    background: rgba(122, 80, 2, 0.5);
+    transform: translateY(-2px);
+  }
+  .btnCSS2:focus {
+    outline: none;
+  }
+  .btnCSS2:active {
+    transform: translateY(2px);
+  }
+  .btnCSS3{
+    background: rgba(10,10,10,0.5);
+    color: var(--white);
+    padding: 2px 6px 2px 6px; 
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+  .btnCSS3:hover{
+    background: rgba(255, 3, 3, 0.5);
+    transform: translateY(-2px);
+  }
+  .btnCSS3:focus {
+    outline: none;
+  }
+  .btnCSS3:active {
+    transform: translateY(2px);
+  }
+
+  /* Level Grid */
+  .level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .level-card1, .level-card2, .level-card3 {
+    background: rgba(10, 10, 10, 0.5);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .level-card1 h3, .level-card2 h3, .level-card3 h3 {
+    font-size: 1.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 1rem;
+  }
+
+  .level-card1 p, .level-card2 p, .level-card3 p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .level-card1 .price, .level-card2 .price, .level-card3 .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-pink);
+    margin-bottom: 1rem;
+  }
+
+  .btnLevel1, .btnLevel2, .btnLevel3 {
+    background: var(--primary-pink);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+  }
+
+  .btnLevel1:hover, .btnLevel2:hover, .btnLevel3:hover {
+    background: var(--light-pink);
+    transform: translateY(-2px);
+  }
+
+  @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
